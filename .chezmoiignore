@@ -1,1 +1,10 @@
 .config/zsh/.zcompdump
+
+.config/cmus/**
+!.config/cmus/
+!.config/cmus/*.theme
+
+.config/yazi/**
+!.config/yazi/
+!.config/yazi/{yazi,keymap}.toml
+!.config/yazi/init.lua

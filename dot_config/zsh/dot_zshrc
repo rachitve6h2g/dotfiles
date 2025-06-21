@@ -1,5 +1,6 @@
 export XDG_DATA_HOME="$HOME/.local/share"
 export EDITOR='nvim'
+export MOZ_ENABLE_WAYLAND=1
 # See the note in the zinit.zsh file in case
 # you load compinit
 source $ZDOTDIR/zinit.zsh
