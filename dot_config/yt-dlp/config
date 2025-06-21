@@ -1,0 +1,5 @@
+--embed-thumbnail
+--add-metadata
+--downloader aria2c
+--downloader-args aria2c:'-c -x8 -s8 -k1M'
+-f bestvideo+bestaudio/best

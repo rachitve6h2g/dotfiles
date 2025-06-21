@@ -8,3 +8,12 @@
 !.config/yazi/
 !.config/yazi/{yazi,keymap}.toml
 !.config/yazi/init.lua
+
+.config/btop/**
+!.config/btop/
+!.config/btop/themes
+!.config/btop/themes/**
+!.config/btop/btop.conf
+
+.config/cava/shaders
+.config/cava/shaders/**
