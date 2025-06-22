@@ -598,3 +598,7 @@ binds {
   // moving the mouse or pressing any other key.
   Mod+Shift+P { power-off-monitors; }
 }
+
+overview {
+  backdrop-color "#1f1d2e"
+}
