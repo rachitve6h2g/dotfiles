@@ -1,0 +1,102 @@
+{
+  // Global settings
+  "position": "bottom",
+  "spacing": 4,
+  "reload_style_on_change": true,
+
+  // Module layout
+  "modules-left": [
+    "idle_inhibitor",
+    "niri/workspaces"
+  ],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "pulseaudio",
+    "pulseaudio/slider",
+    "backlight",
+    "backlight/slider",
+    "network",
+    "upower"
+  ],
+
+  // Modules configuration
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+
+  "niri/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": "{icon}",
+    "format-icons": {
+      "urgent": " ",
+      "active": " ",
+      "default": " "
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": []
+    }
+  },
+
+  "clock": {
+    "interval": 1,
+    "format": "<span size='12pt'> </span> {:%I:%M:%S %p}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "<span size='12pt'> </span> {:%Y-%m-%d}"
+  },
+
+  "pulseaudio": {
+    "format": "{volume}% <span size='12pt'>{icon}</span>",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "<span size='12pt'> </span>{format_source}",
+    "format-source": "{volume}% <span size='12pt'></span>",
+    "format-source-muted": " ",
+    "format-icons": {
+      "headphone": "",
+      "headset": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+
+  "pulseaudio/slider": {
+    "min": 1,
+    "max": 80,
+    "orientation": "horizontal"
+  },
+
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": [
+      "",
+      ""
+    ]
+  },
+
+  "backlight/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+  },
+
+  "network": {
+    "format-wifi": "<span color = '#9ccfd8' size='12pt'> </span> {essid}({signalStrength}%)",
+    "on-click": "killall nm-connection-editor || exec uwsm app -- nm-connection-editor.desktop",
+    "format-ethernet": "{ipaddr}/{cidr}  ",
+    "tooltip-format": "{essid} ({signalStrength}%)",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "󰤮 "
+  }
+}

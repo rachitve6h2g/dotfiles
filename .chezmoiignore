@@ -1,3 +1,6 @@
+*.txt
+*/*.txt
+
 .config/zsh/.zcompdump
 
 .config/cmus/**
