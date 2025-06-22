@@ -21,6 +21,12 @@ if [ ! -d "${DOWNLOAD_DIR}" ]; then
   git clone --depth=1 "$REPO_URL" "$DOWNLOAD_DIR"
 else
   echo "Directory already exists."
+  if [[ -d "$DOWNLOAD_DIR/.git" ]]; then
+    echo "Repository already cloned, pulling latest changes..."
+    git -C "$DOWNLOAD_DIR" pull
+  else
+    echo "This is no longer a repo. Please re-clone"
+  fi
 fi
 
 mkdir -p "$(dirname "$DEST_DIR")"
