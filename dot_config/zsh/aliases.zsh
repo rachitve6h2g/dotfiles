@@ -36,9 +36,9 @@ alias bomb_me=':(){:|:&};:'
 # To source .zshrc
 alias sozsh='source $ZDOTDIR/.zshrc'
 
-# Alias for colored helps 
+# Alias for colored helps
 # Also see the help function in .zshrc
-# The aliases have been set keeping in mind 
+# The aliases have been set keeping in mind
 # the oh-my-zsh issue about diagnostics.zsh
 alias -g -- :B='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- :b='--help 2>&1 | bat --language=help --style=plain'
@@ -58,7 +58,7 @@ alias '..'="cd .."
 
 # Refer https://github.com/andreafrancia/trash-cli#but-sometimes-i-forget-to-use-trash-put-really-cant-i
 # For using trash-cli instead of 'rm'
-alias rm='echo "This is not the command you are looking for (use trash-cli)"; false'
+# alias rm='echo "This is not the command you are looking for (use trash-cli)"; false'
 alias mv='mv -iv'
 
 # THIS>>
