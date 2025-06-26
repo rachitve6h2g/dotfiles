@@ -61,7 +61,7 @@ input {
 
   // Focus windows and outputs automatically when moving the mouse into them.
   // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-  // focus-follows-mouse max-scroll-amount="0%"
+  focus-follows-mouse max-scroll-amount="0%"
 }
 
 // You can configure outputs by their name, which you can find
@@ -356,7 +356,7 @@ binds {
 
   // Example volume keys mappings for PipeWire & WirePlumber.
   // The allow-when-locked=true property makes them work even when the session is locked.
-  XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
+  XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" "-l" "0.9"; }
   XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
   XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
   XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
@@ -597,8 +597,15 @@ binds {
   // Powers off the monitors. To turn them back on, do any input like
   // moving the mouse or pressing any other key.
   Mod+Shift+P { power-off-monitors; }
+  //
+  // Qutebrowser doesn't open with fuzzel
+  Mod+B { spawn "app2unit" "qutebrowser"; }
+
+  // Open clipboard with fuzzel
+  Mod+G hotkey-overlay-title="Open Clipboard" { spawn "sh" "-c" "~/.local/bin/cliphist-fuzzel-img"; }
 }
 
 overview {
   backdrop-color "#1f1d2e"
 }
+

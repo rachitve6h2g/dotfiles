@@ -1,5 +1,5 @@
 max-history=10
-anchor=top-center
+anchor=top-right
 
 on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
 on-button-middle=exec makoctl menu -n "$id" wofi -S dmenu -p 'Select Action: '

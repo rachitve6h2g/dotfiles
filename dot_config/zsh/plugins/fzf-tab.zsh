@@ -4,7 +4,7 @@
 # source /usr/share/fzf/completion.zsh
 # or
 zinit snippet 'https://raw.githubusercontent.com/junegunn/fzf/refs/heads/master/shell/completion.zsh'
-# source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/key-bindings.zsh
 
 zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-completions # Needed for tab-completions, otherwise error
@@ -28,4 +28,5 @@ zinit light zsh-users/zsh-completions # Needed for tab-completions, otherwise er
 # zstyle ':fzf-tab:*' use-fzf-default-opts yes
 # # switch group using `<` and `>`
 # zstyle ':fzf-tab:*' switch-group '<' '>'
-zpcompinit; zpcdreplay
+zpcompinit
+zpcdreplay

@@ -63,3 +63,6 @@ alias mv='mv -iv'
 
 # THIS>>
 alias sl='sl -calF'
+
+# Trash with interactive mode
+alias trash='trash -i'

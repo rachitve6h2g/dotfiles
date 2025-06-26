@@ -29,13 +29,13 @@ mkdir -p "$YAZI_CONFIG"
 # Setup plugins
 echo "📦 Installing Yazi plugins..."
 for plugin in "${PLUGINS[@]}"; do
-  ya pkg add "$plugin" || echo "⚠️ Plugin $plugin may already exist."
+  ya pack -a "$plugin" || echo "⚠️ Plugin $plugin may already exist."
 done
 
 # Setup flavor
 if [ ! -d "${FLAVOR_DIR}" ]; then
   echo "🎨 Installing Yazi flavor: $FLAVOR"
-  ya pkg add "$FLAVOR"
+  ya pack -a "$FLAVOR"
 else
   echo "Theme already installed"
 fi

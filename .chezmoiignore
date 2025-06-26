@@ -1,6 +1,9 @@
 *.txt
 */*.txt
 
+scripts/
+scripts/**
+
 README.md
 
 .config/zsh/.zcompdump
