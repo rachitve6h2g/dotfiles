@@ -1,5 +1,0 @@
-return {
-  {
-    "lambdalisue/vim-suda",
-  },
-}

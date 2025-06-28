@@ -1,0 +1,8 @@
+[[mgr.prepend_keymap]]
+on = [ "L" ]
+run = "plugin bypass"
+desc = "Recursively enter child directory, skipping children with only a single subdirectory"
+[[mgr.prepend_keymap]]
+on = [ "H" ]
+run = "plugin bypass reverse"
+desc = "Recursively enter parent directory, skipping parents with only a single subdirectory"

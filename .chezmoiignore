@@ -1,23 +1,7 @@
-*.txt
-*/*.txt
-
 scripts/
 scripts/**
 
+*.txt
+*/*.txt
+
 README.md
-
-.config/zsh/.zcompdump
-
-.config/cmus/**
-!.config/cmus/
-!.config/cmus/*.theme
-
-.config/yazi/{flavors,plugins}
-.config/yazi/{flavors,plugins}/**
-.config/yazi/{package,theme}.toml
-
-.config/btop/btop.log
-
-
-.config/cava/shaders
-.config/cava/shaders/**
