@@ -1,6 +1,6 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: IosevkaTerm Nerd Font;
+  font-family: ComicShannsMono Nerd Font;
   font-size: 12px;
   color: #e0def4;
 }
@@ -85,7 +85,7 @@ window#waybar.hidden {
 }
 
 #upower {
-  border-radius: 5px;
+  border-radius: 15px;
   margin: 8px 0px;
   padding: 0px 5px;
 }
