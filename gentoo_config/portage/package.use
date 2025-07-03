@@ -1,0 +1,86 @@
+# Installkernel and other stuff
+sys-kernel/gentoo-kernel modules-compress experimental
+sys-kernel/linux-firmware compress-zstd savedconfig
+sys-kernel/installkernel ugrd efistub uki ukify -dracut
+sys-apps/systemd cryptsetup ukify boot
+
+# You'll need this
+app-admin/sudo offensive -sendmail
+
+# Pipewire sound-server
+media-video/pipewire sound-server
+
+# For eselect-repository
+net-misc/aria2 xmlrpc metalink bittorrent
+www-client/uget aria2
+
+# Disable transfer support for bluetooth
+net-wireless/bluez -obex -mesh
+
+# Enable jpeg support in swaybg
+gui-apps/swaybg gdk-pixbuf
+
+# Build nodejs with npm package manager for use in neovim
+net-libs/nodejs npm
+
+# Build imv without freeimage, freeimage not needed
+media-gfx/imv -freeimage
+
+# Build ffmpegthumbnailer with jpeg and png support
+media-video/ffmpeg webp vorbis  openh264
+
+# For xdg-utils
+app-text/xmlto text
+
+# Use policykit for upower
+sys-power/upower policykit
+
+# fonts for some important stuff
+media-fonts/noto cjk
+media-fonts/nerdfonts iosevkaterm
+
+# For zathura
+app-text/zathura-meta pdf epub cb
+
+# Libcanberra sounds 
+media-libs/libcanberra alsa
+
+# Without this cmus won't read ogg/opus files
+media-sound/cmus ffmpeg
+
+# Of course we gotta show off
+app-misc/fastfetch imagemagick chafa
+# Svg support needs it.
+media-gfx/imagemagick xml
+
+# NOTE: remove the X flag once qutebrowser 
+# becomes full wayland
+# For vaapi stuff
+media-libs/mesa -vaapi
+media-libs/vulkan-loader layers
+
+# Libreoffice-bin but with java support
+app-office/libreoffice-bin java
+
+# For niri
+gui-apps/waybar upower network wifi
+
+# For firefox
+www-client/firefox:rapid system-png hwaccel system-pipewire
+media-libs/libglvnd X
+media-libs/libvpx postproc
+media-libs/libpng apng
+
+# For pcmanfm
+x11-libs/libfm gtk udisks
+app-crypt/gcr gtk
+gnome-base/gvfs udisks mtp
+
+# For emacs
+app-emacs/emacs-common gui
+net-libs/gnutls tools
+app-editors/emacs gui gtk ssl jit mailutils
+sys-devel/gcc jit
+
+# For SBCL common lisp
+dev-lisp/sbcl system-bootstrap

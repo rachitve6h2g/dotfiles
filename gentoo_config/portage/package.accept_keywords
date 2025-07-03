@@ -1,0 +1,56 @@
+dev-lisp/sbcl
+# For pcmanfm file-manager
+x11-misc/pcmanfm
+x11-libs/libfm
+
+# For portage faster downloads
+app-portage/fetchcommandwrapper
+
+# For efistub
+sys-kernel/installkernel
+sys-boot/uefi-mkconfig
+app-emulation/virt-firmware
+
+# For niri
+app-misc/brightnessctl::guru
+gui-apps/swaylock-effects::guru
+gui-apps/uwsm::gentoo
+gui-apps/wlsunset::guru
+app-misc/cliphist::guru
+gui-wm/niri::guru
+gui-apps/fuzzel::guru
+
+# For dotfiles
+app-admin/chezmoi::guru
+
+# Nerdfonts
+media-fonts/nerdfonts::guru
+
+# It's zoxide as alaways
+app-shells/zoxide
+
+# Yazi file-manager, the latest
+# Requires rustc 1.86.0 or something like that
+app-misc/yazi::gentoo-zh
+
+# LazyGit had to happen
+dev-util/github-cli
+dev-vcs/lazygit::guru
+
+# MPV-MPRIS protocol
+mpv-plugin/mpv-mpris::guru
+
+# For bluetui
+net-wireless/bluetui::lamdness
+
+# For LS_COLORS
+app-shells/vivid::guru
+
+# From my overlay
+sys-apps/app2unit::my-overlay
+sys-power/poweralertd::my-overlay **
+gui-apps/xdg-terminal-exec::my-overlay
+
+# For firefox rapid
+www-client/firefox
+dev-libs/nss

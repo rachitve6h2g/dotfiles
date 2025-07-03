@@ -1,0 +1,8 @@
+sys-kernel/linux-firmware linux-fw-redistributable
+sys-firmware/intel-microcode intel-ucode
+
+# For qutebrowser widevine support
+www-plugins/chrome-binary-plugins google-chrome
+
+# For vaapi support
+media-libs/libva-intel-media-driver no-source-code

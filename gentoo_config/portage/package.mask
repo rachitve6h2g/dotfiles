@@ -1,0 +1,7 @@
+media-sound/pulseaudio-daemon
+app-text/zathura-pdf-poppler
+virtual/w3m
+www-client/elinks
+www-client/links
+
+xfce-base/xfwm4
