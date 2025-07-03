@@ -1,0 +1,21 @@
+[Unit]
+Description=Wlsunset Service for setting gamma
+Documentation=man:wlsunset(1)
+# order startup after WM
+After=graphical-session.target
+
+[Service]
+Type=exec
+# Repurpose XDG Autostart filtering
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "niri:wlroots:sway:Wayfire:labwc:Hyprland" ""
+ExecStart=/bin/wlsunset -t 4500 -T 6500 -S 05:30 -s 18:00 -d 1800
+Restart=on-failure
+Slice=app-graphical.slice
+
+[Install]
+WantedBy=graphical-session.target
+# Alternatively can be wanted by specific WMs
+#WantedBy=wayland-session@sway.desktop.target
+#WantedBy=wayland-session@wayfire.desktop.target
+#WantedBy=wayland-session@labwc.desktop.target
+#WantedBy=wayland-session@hyprland.desktop.target

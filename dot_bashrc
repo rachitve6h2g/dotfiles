@@ -2,12 +2,12 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
+  . /etc/bashrc
 fi
 
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+  PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH
 
@@ -16,36 +16,112 @@ export PATH
 
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then
-    for rc in ~/.bashrc.d/*; do
-        if [ -f "$rc" ]; then
-            . "$rc"
-        fi
-    done
+  for rc in ~/.bashrc.d/*; do
+    if [ -f "$rc" ]; then
+      . "$rc"
+    fi
+  done
 fi
 unset rc
+
 # For editor
-export EDITOR=vim
+export EDITOR='emacsclient -c'
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
+# export EMACS_SOCKET_NAME="/tmp/emacs${UID}/server"
+
+export HISTCONTROL="$HISTCONTROL erasedups:ignorespace:ignoreboth"
+export HISTFILESIZE=1000
+export HISTSIZE=500
+
+# Check window size
+shopt -s checkwinsize
+# Globing features
+shopt -s extglob
+#include .files when globbing.
+shopt -s dotglob
+#When a glob expands to nothing, make it an empty string instead of the literal characters.
+shopt -s nullglob
+# fix spelling errors for cd, only in interactive shell
+shopt -s cdspell
+
+# Don't search $PATH to find files for the `source` builtin
+shopt -u sourcepath
+
+# Do not overwrite files when redirecting output by default.
+set -o noclobber
+
+# Wrap the following commands for interactive use to avoid accidental file overwrites.
+rm() { command rm -i "${@}"; }
+cp() { command cp -i "${@}"; }
+mv() { command mv -i "${@}"; }
+trash() { command trash -i "${@}"; }
 
 # For starship
 eval "$(starship init bash)"
 
-# For eza
-alias ls='eza --git --group-directories-first --group --icons --color'
-alias l='ls -al'
-alias ll='ls -l'
-alias la='l'
-alias dir='l --only-dirs'
-alias '..'='cd ..'
+# For extracting archives or tars
+extract() {
+  if [ -f $1 ]; then
+    case $1 in
+    *.tar.bz2) tar xvjf $1 ;;
+    *.tar.gz) tar xvzf $1 ;;
+    *.bz2) bunzip2 $1 ;;
+    *.rar) unrar x $1 ;;
+    *.gz) gunzip $1 ;;
+    *.tar) tar xvf $1 ;;
+    *.tbz2) tar xvjf $1 ;;
+    *.tgz) tar xvzf $1 ;;
+    *.zip) unzip $1 ;;
+    *.Z) uncompress $1 ;;
+    *.7z) 7z x $1 ;;
+    *) echo "don't know how to extract '$1'..." ;;
+    esac
+  else
+    echo "'$1' is not a valid file!"
+  fi
+}
 
 # For yazi
 function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd <"$tmp"
+  [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+  rm -f -- "$tmp"
 }
 
 # For zoxide
 eval "$(zoxide init --cmd cd bash)"
+
+# Fzf
+source /usr/share/bash-completion/completions/fzf
+source /usr/share/fzf/key-bindings.bash
+
+# These options only exist since Bash 4.0-alpha
+if ((BASH_VERSINFO[0] >= 4)); then
+
+  # Correct small errors in directory names during completion
+  shopt -s dirspell
+  # Allow double-star globs to match files and recursive paths
+  shopt -s globstar
+
+  # Warn me about stopped jobs when exiting
+  # Available since 4.0, but only set it if >=4.1 due to bug:
+  # <https://lists.gnu.org/archive/html/bug-bash/2009-02/msg00176.html>
+  if ((BASH_VERSINFO[1] >= 1)); then
+    shopt -s checkjobs
+  fi
+
+  # Expand variables in directory completion
+  # Only available since 4.3
+  if ((BASH_VERSINFO[1] >= 3)); then
+    shopt -s direxpand
+  fi
+fi
+
+# Load Bash-specific startup files
+for bash in "$HOME"/.bashrc.d/*.bash; do
+  [[ -e $bash ]] || continue
+  source "$bash"
+done
+unset -v bash

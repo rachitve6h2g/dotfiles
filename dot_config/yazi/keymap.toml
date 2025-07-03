@@ -1,8 +1,45 @@
-[[mgr.prepend_keymap]]
-on = [ "L" ]
-run = "plugin bypass"
-desc = "Recursively enter child directory, skipping children with only a single subdirectory"
-[[mgr.prepend_keymap]]
-on = [ "H" ]
-run = "plugin bypass reverse"
-desc = "Recursively enter parent directory, skipping parents with only a single subdirectory"
+[mgr]
+prepend_keymap = [
+    # gvfs plugin
+    { on = [ "M", "m" ], run = "plugin gvfs -- select-then-mount", desc = "Select device then mount" },
+    # or this if you want to jump to mountpoint after mounted
+    { on = [ "M", "m" ], run = "plugin gvfs -- select-then-mount --jump", desc = "Select device to mount and jump to its mount point" },
+    # This will remount device under cwd (e.g. cwd = /run/user/1000/gvfs/DEVICE_1/FOLDER_A, device mountpoint = /run/user/1000/gvfs/DEVICE_1)
+    { on = [ "M", "R" ], run = "plugin gvfs -- remount-current-cwd-device", desc = "Remount device under cwd" },
+    { on = [ "M", "u" ], run = "plugin gvfs -- select-then-unmount", desc = "Select device then unmount" },
+    # or this if you want to unmount and eject device. Ejected device can safely be removed.
+    # Fallback to normal unmount if not supported by device.
+    { on = [ "M", "u" ], run = "plugin gvfs -- select-then-unmount --eject", desc = "Select device then eject" },
+    # Also support force unmount/eject.
+    # force = true -> Ignore outstanding file operations when unmounting or ejecting
+    { on = [ "M", "U" ], run = "plugin gvfs -- select-then-unmount --eject --force", desc = "Select device then force to eject/unmount" },
+
+    # Add|Edit|Remove mountpoint: smb, sftp, ftp, nfs, dns-sd, dav, davs, dav+sd, davs+sd, afp, afc, sshfs
+    # Read more about the schemes here: https://wiki.gnome.org/Projects(2f)gvfs(2f)schemes.html
+    # For example: smb://user@192.168.1.2/share, sftp://user@192.168.1.2/, ftp://192.168.1.2/
+    # - Scheme/Mount URIs shouldn't contain password.
+    # - Google Drive, One drive are mounted automatically via GNOME Online Accounts (GOA). Avoid adding them. Use GOA instead: ./GNOME_ONLINE_ACCOUNTS_GOA.md
+    # - MTP, GPhoto2, AFC, Hard disk/drive are listed automatically. Avoid adding them
+    { on = [ "M" ], run = "plugin gvfs -- add-mount", desc = "Add a GVFS mount URI" },
+    # Edit or remove a GVFS mount URI will clear saved passwords for that mount URI.
+    { on = [ "M", "e" ], run = "plugin gvfs -- edit-mount", desc = "Edit a GVFS mount URI" },
+    { on = [ "M", "r" ], run = "plugin gvfs -- remove-mount", desc = "Remove a GVFS mount URI" },
+
+    # Jump
+    { on = [ "g", "m" ], run = "plugin gvfs -- jump-to-device", desc = "Select device then jump to its mount point" },
+    { on = [ "`", "`" ], run = "plugin gvfs -- jump-back-prev-cwd", desc = "Jump back to the position before jumped to device" },
+
+    # For bypass yazi
+    { on = "<C-S-f>", run = "plugin bypass", desc = "Recursively enter child directory, skipping children with only a single" },
+    { on = "<C-S-b>", run = "plugin bypass reverse", desc = "Recursively enter parent directory, skipping parents with only a single subdirectory" },
+
+    # For diff.yazi
+    { on = "<C-d>", run  = "plugin diff", desc = "Diff the selected with the hovered file" },
+
+    # For emacs keybindings
+    { on = "<C-n>", run = "arrow next", desc = "Next file" },
+    { on = "<C-p>", run = "arrow prev", desc = "Previous file" },
+
+    { on = "<C-b>", run = "leave", desc = "Back to parent directory" },
+    { on = "<C-f>", run = "enter", desc = "Enter the child directory" },
+]

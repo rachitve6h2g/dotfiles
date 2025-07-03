@@ -16,6 +16,7 @@
     "backlight",
     "backlight/slider",
     "network",
+    "battery",
     "upower"
   ],
 
@@ -92,11 +93,34 @@
   },
 
   "network": {
-    "format-wifi": "<span color = '#9ccfd8' size='12pt'> </span> {essid}({signalStrength}%)",
+    "format-wifi": "<span color = '#a6e3a1' size='12pt'> </span> {essid}({signalStrength}%)",
     "on-click": "killall nm-connection-editor || exec uwsm app -- nm-connection-editor.desktop",
     "format-ethernet": "{ipaddr}/{cidr}  ",
     "tooltip-format": "{essid} ({signalStrength}%)",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "󰤮 "
-  }
+  },
+
+	"upower": {
+		 "show-icon": false,
+		"hide-if-empty": true,
+		"tooltip": true,
+		"tooltip-spacing": 20
+	},
+	"battery": {
+		   "interval": 60,
+		   "states": {
+		   	     "warning": 30,
+			     "critical": 15
+			     },
+			     "format": "{icon}",
+			     "format-icons": [
+				"<span size=\"13pt\"> </span>",
+				"<span size='13pt'> </span>",
+				"<span size='13pt'>></span>",
+				"<span size='13pt'> </span>",
+				"<span size='13pt'> </span>"
+			      ],
+			     "max-length": 25,
+	}
 }
