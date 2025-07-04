@@ -5,13 +5,13 @@ hash = "208e77480824f62558a5b037c8569d61"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "2ad42fa"
+rev = "e5f00e2"
 hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "2ad42fa"
-hash = "e01006bfb38951ea89031bd918b20dbb"
+rev = "e5f00e2"
+hash = "37ebed215c8742eada643fc2655b65e2"
 
 [[plugin.deps]]
 use = "boydaihungst/mediainfo"
@@ -20,13 +20,13 @@ hash = "4b6ac1a6fd7ba02a945070ad39fc1999"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:diff"
-rev = "2ad42fa"
+rev = "e5f00e2"
 hash = "47865a70cade14a0b9b6bc6a54f16bdb"
 
 [[plugin.deps]]
 use = "boydaihungst/gvfs"
-rev = "058cd24"
-hash = "885e3ab32c34087113b6d470a76a46bd"
+rev = "c23dc06"
+hash = "bbadb62e7b9b80863424cadb059628f1"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"

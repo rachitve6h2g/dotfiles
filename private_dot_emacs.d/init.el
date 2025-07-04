@@ -1,5 +1,4 @@
 (setq visible-bell t)
-
 (setq standard-indent '2)
 
 (tool-bar-mode -1)
@@ -14,7 +13,7 @@
 
 ;; Choose the font family
 (set-face-attribute 'default nil
-		    :family "IosevkaTerm Nerd Font"
+		    :family "JetBrainsMono Nerd Font"
 		    :height 140)
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups"))

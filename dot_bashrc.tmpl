@@ -94,8 +94,12 @@ function y() {
 eval "$(zoxide init --cmd cd bash)"
 
 # Fzf
+{{ if eq .osid "linux-gentoo" }}
 source /usr/share/bash-completion/completions/fzf
 source /usr/share/fzf/key-bindings.bash
+{{ else if eq .osid "linux-fedora" }}
+source /usr/share/fzf/shell/key-bindings.bash
+{{ end }}
 
 # These options only exist since Bash 4.0-alpha
 if ((BASH_VERSINFO[0] >= 4)); then
