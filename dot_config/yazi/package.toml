@@ -29,6 +29,6 @@ rev = "c23dc06"
 hash = "bbadb62e7b9b80863424cadb059628f1"
 
 [[flavor.deps]]
-use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "d04a298"
-hash = "288a0dedd5d13b28605cf82c05326dcd"
+use = "rachitve6h2g/rose-pine-yazi:rose-pine-main"
+rev = "b987c48"
+hash = "11d41234ee08962f7ba89ad1e0e8a239"

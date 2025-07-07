@@ -1,3 +1,6 @@
+(setq-default truncate-lines t)
+(global-visual-line-mode -1)
+
 (setq visible-bell t)
 (setq standard-indent '2)
 

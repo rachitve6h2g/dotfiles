@@ -7,6 +7,11 @@ if ! command -v git &>/dev/null; then
   exit 1
 fi
 
+if [[ -d "${HOME}/.local/share/themes" ]]; then
+  rm -rf "${HOME}"/local/share/themes/*
+  echo "Cleaned themes."
+fi
+
 read -p "Enter choice (1 for Catppuccin, 2 for rose-pine, 3 for kanagawa): " choice
 
 case $choice in

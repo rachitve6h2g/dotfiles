@@ -25,6 +25,9 @@ input {
 
   // Next sections include libinput settings.
   // Omitting settings disables them, or leaves them at their default values.
+
+
+  
   touchpad {
     // off
     tap
@@ -156,10 +159,10 @@ layout {
   // You can change how the focus ring looks.
   focus-ring {
     // Uncomment this line to disable the focus ring.
-    off
+    // off
 
     // How many logical pixels the ring extends out from the windows.
-    width 4
+    width 2
 
     // Colors can be set in a variety of ways:
     // - CSS named colors: "red"
@@ -179,7 +182,7 @@ layout {
     // You can use any CSS linear-gradient tool on the web to set these up.
     // Changing the color space is also supported, check the wiki for more info.
     //
-    // active-gradient from="#80c8ff" to="#bbddff" angle=45
+    active-gradient from="#ebbcba" to="#f6c177" angle=45
 
     // You can also color the gradient relative to the entire view
     // of the workspace, rather than relative to just the window itself.
@@ -192,7 +195,7 @@ layout {
   border {
     // The settings are the same as for the focus ring.
     // If you enable the border, you probably want to disable the focus ring.
-    // off
+    off
 
     width 3
     active-color "#ffc87f"
@@ -263,6 +266,8 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 // spawn-at-startup "waybar"
 spawn-at-startup "sh" "-c" "~/.config/niri/gtk-settings.sh"
+
+spawn-at-startup "sh" "-c" " mpv $HOME/.config/niri/soft-startup-sound-269291.mp3"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -594,7 +599,9 @@ binds {
   Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
   // The quit action will show a confirmation dialog to avoid accidental exits.
+  // Default with niri
   Mod+Shift+E { quit; }
+
   Ctrl+Alt+Delete { quit; }
 
   // Powers off the monitors. To turn them back on, do any input like
@@ -609,5 +616,11 @@ binds {
 }
 
 overview {
-	 backdrop-color "#1e1e2e"
+	 backdrop-color "#191724"
 }
+  cursor {
+  	 xcursor-theme "Bibata-Modern-Classic"
+	 xcursor-size 24
+
+	 hide-when-typing
+  }

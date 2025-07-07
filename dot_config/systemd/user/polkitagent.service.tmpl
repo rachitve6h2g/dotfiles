@@ -3,9 +3,14 @@ Description=A normal polkit agent based on gnome
 PartOf=graphical-session.target
 After=graphical-session.target
 ConditionEnvironment=WAYLAND_DISPLAY
-	
+
 [Service]
+{{ if eq .osid "linux-gentoo" }}
 ExecStart=/usr/libexec/polkit-gnome-authentication-agent-1 &
+{{ else if eq .osid "linux-arch" }}
+ExecStart=/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+{{ end }}
+
 Slice=session.slice
 TimeoutStopSec=5sec
 Restart=on-failure

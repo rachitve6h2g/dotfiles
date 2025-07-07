@@ -7,4 +7,7 @@ gentoo_config/**
 *.txt
 */*.txt
 
+*.org
+*/*.org
+
 README.md

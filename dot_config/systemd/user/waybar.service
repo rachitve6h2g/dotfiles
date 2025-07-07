@@ -8,7 +8,7 @@ After=graphical-session.target
 Type=exec
 # Repurpose XDG Autostart filtering
 ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "niri" ""
-ExecStart=/usr/bin/waybar
+ExecStart=/usr/bin/waybar --style %h/.config/waybar/rose-pine.css
 ExecReload=kill -SIGUSR2 $MAINPID
 Restart=on-failure
 Slice=app-graphical.slice

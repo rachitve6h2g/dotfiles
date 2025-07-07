@@ -11,3 +11,5 @@ alias vi='nvim'
 alias vim='nvim'
 alias oldvim='/usr/bin/vim'
 alias emacsc='emacsclient -c'
+
+alias btop='btop --force-utf'

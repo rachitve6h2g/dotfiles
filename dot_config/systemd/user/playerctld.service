@@ -1,0 +1,10 @@
+[Unit]
+Description=Keep track of media player activity
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/playerctld daemon
+Slice=session.slice
+
+[Install]
+WantedBy=graphical-session.target

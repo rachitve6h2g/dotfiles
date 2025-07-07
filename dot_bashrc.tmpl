@@ -26,12 +26,15 @@ unset rc
 
 # For editor
 export EDITOR='emacsclient -c'
-export LS_COLORS="$(vivid generate catppuccin-mocha)"
+export LS_COLORS="$(vivid generate rose-pine)"
 # export EMACS_SOCKET_NAME="/tmp/emacs${UID}/server"
 
 export HISTCONTROL="$HISTCONTROL erasedups:ignorespace:ignoreboth"
 export HISTFILESIZE=1000
 export HISTSIZE=500
+
+export SUDO_PROMPT="$(tput setaf 1 bold)󰌾 $(tput sgr0)$(tput setaf 2)password $(tput sgr0)$(tput setaf 4)for $(tput sgr0)$(tput setaf 5)%p$(tput sgr0)$(tput setaf 3):"
+
 
 # Check window size
 shopt -s checkwinsize
@@ -99,6 +102,9 @@ source /usr/share/bash-completion/completions/fzf
 source /usr/share/fzf/key-bindings.bash
 {{ else if eq .osid "linux-fedora" }}
 source /usr/share/fzf/shell/key-bindings.bash
+{{ else if eq .osid "linux-arch" }}
+source /usr/share/fzf/completion.bash
+source /usr/share/fzf/key-bindings.bash
 {{ end }}
 
 # These options only exist since Bash 4.0-alpha
