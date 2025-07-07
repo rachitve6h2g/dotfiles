@@ -1,9 +1,6 @@
 scripts/
 scripts/**
 
-gentoo_config/
-gentoo_config/**
-
 *.txt
 */*.txt
 

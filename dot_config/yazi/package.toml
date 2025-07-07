@@ -5,28 +5,28 @@ hash = "208e77480824f62558a5b037c8569d61"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "e5f00e2"
+rev = "b886025"
 hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "e5f00e2"
-hash = "37ebed215c8742eada643fc2655b65e2"
+rev = "b886025"
+hash = "63b6c222bf2103b3023389dde5e2ecfe"
 
 [[plugin.deps]]
 use = "boydaihungst/mediainfo"
-rev = "b74b7b8"
-hash = "4b6ac1a6fd7ba02a945070ad39fc1999"
+rev = "cc12f3f"
+hash = "b92e44ad5004f1b45e5c3d717a60ed24"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:diff"
-rev = "e5f00e2"
+rev = "b886025"
 hash = "47865a70cade14a0b9b6bc6a54f16bdb"
 
 [[plugin.deps]]
 use = "boydaihungst/gvfs"
-rev = "c23dc06"
-hash = "bbadb62e7b9b80863424cadb059628f1"
+rev = "fba3345"
+hash = "3e5cb689140c5eb0ca58eb0d7b150417"
 
 [[flavor.deps]]
 use = "rachitve6h2g/rose-pine-yazi:rose-pine-main"

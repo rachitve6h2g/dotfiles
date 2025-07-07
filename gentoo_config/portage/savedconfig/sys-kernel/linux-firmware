@@ -1,8 +1,0 @@
-# Remove files that shall not be installed from this list.
-i915/tgl_huc.bin.zst
-i915/adlp_dmc.bin.zst
-i915/adlp_guc_70.bin.zst
-rtl_bt/rtl8761bu_config.bin.zst
-rtl_bt/rtl8852bu_fw.bin.zst
-rtl_bt/rtl8852bu_config.bin.zst
-rtw89/rtw8852b_fw-1.bin.zst
