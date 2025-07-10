@@ -1,0 +1,1 @@
+rd.luks.name=f83cd079-9f34-44d1-b052-ba83e7674675=root rd.luks.options=password-echo=yes root=/dev/mapper/root zswap.enabled=0 rootfstype=btrfs rootflags=subvol=/@ rw i915.force_probe=!a7a0 xe.force_probe=a7a0

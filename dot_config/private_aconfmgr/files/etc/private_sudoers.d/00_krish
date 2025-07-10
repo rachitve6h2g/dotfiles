@@ -1,0 +1,4 @@
+krish ALL=(ALL) ALL
+
+Defaults pwfeedback
+Defaults insults
