@@ -7,7 +7,7 @@
 # Change 'recolor' and 'recolor-keephue' to true to change
 # the document colors for a more uniform viewing experience.
 
-set default-bg                  "#191724"
+set default-bg                  "#1f1d2e"
 set default-fg                  "#e0def4"
 
 set statusbar-fg                "#e0def4"

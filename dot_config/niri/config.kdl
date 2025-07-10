@@ -111,7 +111,7 @@ input {
 layout {
   // Set gaps around windows in logical pixels.
   gaps 16
-  // background-color "transparent"
+  background-color "transparent"
 
   // When to center a column when changing focus, options are:
   // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -617,6 +617,11 @@ binds {
 
 overview {
 	 backdrop-color "#191724"
+
+	 workspace-shadow {
+	 		  off
+	 }
+	 
 }
   cursor {
   	 xcursor-theme "Bibata-Modern-Classic"
@@ -624,3 +629,12 @@ overview {
 
 	 hide-when-typing
   }
+
+layer-rule {
+	   match namespace="^wallpaper$"
+	   place-within-backdrop true
+}
+
+environment {
+	    DISPLAY ":0"
+}

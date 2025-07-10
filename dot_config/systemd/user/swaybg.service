@@ -8,7 +8,7 @@ After=graphical-session.target
 Type=exec
 # Repurpose XDG Autostart filtering
 ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "niri" ""
-ExecStart=swaybg -m fill -i "%h/Pictures/Wallpapers/rosepine-18.jpeg"
+ExecStart=swaybg -m fill -i "%h/Pictures/Wallpapers/greenscene-01.jpg"
 Restart=on-failure
 Slice=background-graphical.slice
 
