@@ -2,3 +2,5 @@ alias oldvim='vim'
 alias vim='nvim'
 alias vi='nvim'
 alias l="ls"
+
+alias lg='lazygit'
