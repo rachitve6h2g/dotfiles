@@ -40,24 +40,24 @@ else
 fi
 
 POLARITY="Dark" # Or it can be "Light"
-THEME="Gruvbox-Plus-$POLARITY"
-THEME_SRC="$DOWNLOAD_DIR/$THEME"
-THEME_INSTALL_DIR="$HOME/.local/share/themes"
-LINK="$THEME_INSTALL_DIR/$THEME"
+ICON="Gruvbox-Plus-$POLARITY"
+ICON_SRC="$DOWNLOAD_DIR/$ICON"
+ICON_INSTALL_DIR="$HOME/.local/share/icons"
+LINK="$ICON_INSTALL_DIR/$ICON"
 
-if [[ -L "$LINK" && "$(readlink "$LINK")" == "$THEME_SRC" ]]; then
+if [[ -L "$LINK" && "$(readlink "$LINK")" == "$ICON_SRC" ]]; then
   echo "Symlink exists."
   echo "Skipping symlink creation"
 else
   echo "now creating/updating symlink (as directed by the git readme)"
-  if [[ ! -d "$THEME_INSTALL_DIR" ]]; then
-    mkdir -p "$THEME_INSTALL_DIR"
+  if [[ ! -d "$ICON_INSTALL_DIR" ]]; then
+    mkdir -p "$ICON_INSTALL_DIR"
     echo "XDG_DATA_DIR/themes created"
   else
-    echo "$THEME_INSTALL_DIR already exists, skipping creation"
+    echo "$ICON_INSTALL_DIR already exists, skipping creation"
   fi
   
-  ln -sfn "$THEME_SRC" "$THEME_INSTALL_DIR/"
+  ln -sfn "$ICON_SRC" "$ICON_INSTALL_DIR/"
 
   echo "Symlink created: $(readlink "$LINK")"
 fi
