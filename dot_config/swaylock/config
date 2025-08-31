@@ -23,3 +23,7 @@ text-color=ddc7a1
 text-ver-color=ddc7a1
 text-wrong-color=ddc7a1
 
+image=$HOME/Pictures/Wallpapers/anime_skull.png
+show-failed-attempts
+font=IosevkaTermNerdFont
+font-size=14
