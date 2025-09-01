@@ -15,6 +15,9 @@ fi
 
 # Put your fun stuff here.
 
+export HISTCONTROL="$HISTCONTROL erasedups:ignoreboth"
+set -o noclobber
+
 # Fzf bash settings
 source /usr/share/bash-completion/completions/fzf
 source /usr/share/fzf/key-bindings.bash
