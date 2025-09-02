@@ -11,14 +11,14 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term "app2unit -T"
 # Your preferred application launcher
 set $menu "wofi -S drun"
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $HOME/Pictures/Wallpapers/anime_skull.png fill
+output * bg $HOME/Pictures/Wallpapers/gruvbox-1.jpg fill
 
 # Set GTK theme
 set $gnome-schema org.gnome.desktop.interface

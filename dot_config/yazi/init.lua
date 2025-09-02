@@ -1,6 +1,6 @@
 -- For full-border plugin
 require("full-border"):setup({
-	type = ui.Border.ROUNDED,
+	type = ui.Border.PLAIN,
 })
 
 -- for git.yazi
