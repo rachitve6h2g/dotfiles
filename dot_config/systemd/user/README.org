@@ -15,6 +15,6 @@
   $aria2c https://raw.githubusercontent.com/rachitve6h2g/dotfiles/refs/heads/main/dot_config/systemd/user/swayidle2.service # Use the raw link to download the file
 
   # Then activate the user service:
-  $systemd --user daemon-reload
-  $systemd --user enable swayidle2.service
+  $systemctl --user daemon-reload
+  $systemctl --user enable swayidle2.service
 #+end_src
