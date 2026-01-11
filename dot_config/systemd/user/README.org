@@ -5,6 +5,11 @@
 
 * Setup swayidle service:
 #+begin_src bash
+
+  # First disable any previous swayidle.service and delete the service
+  $systemctl --user stop swayidle.service # Swayidle stopped
+  $systemctl --user disable swayidle.service # Swayidle service deleted
+
   $mkdir -p $HOME/.config/systemd/user # First create the systemd directory 
   $cd $HOME/.config/systemd/user # Then cd into the directory 
   $aria2c https://raw.githubusercontent.com/rachitve6h2g/dotfiles/refs/heads/main/dot_config/systemd/user/swayidle2.service # Use the raw link to download the file
