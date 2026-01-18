@@ -1,6 +1,0 @@
-filetype indent on
-filetype plugin on
-set number
-set relativenumber
-inoremap jj <Esc>
-syntax on

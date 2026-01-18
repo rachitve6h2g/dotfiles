@@ -19,7 +19,8 @@ fi
 
 # Wallpapers array: "url|filename"
 wallpapers=(
-    "https://raw.githubusercontent.com/rachitve6h2g/Wallpapers/refs/heads/main/platform.jpg|gruvbox-1.jpg"
+    # "https://raw.githubusercontent.com/rachitve6h2g/Wallpapers/refs/heads/main/platform.jpg|gruvbox-1.jpg"
+    "https://github.com/linuxdotexe/nordic-wallpapers/blob/master/wallpapers/ign_herakles.png?raw=true|herakles.png"
 )
 
 # Destination directory
