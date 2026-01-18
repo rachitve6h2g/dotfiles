@@ -4,7 +4,8 @@
   - [[https://github.com/Noob-linux-user/Wallpaper][From Noob-linux user]]
   - [[https://www.wallrice.xyz/][WallRice(customize any wallpaper to match your theme)]]
   - [[https://ign.schrodinger-hat.it/color-schemes][Another Wallpaper converter]]
-
+  - [[https://github.com/linuxdotexe/nordic-wallpapers/][Nordic Wallpapers]]
+    
 * Learn Lua - Free Resources
 
   - Scripting in lua (additional languages as well) [[https://docs.fivem.net/docs/scripting-manual/][FiveMDocs]] recommended by FreeCodeCamp users.

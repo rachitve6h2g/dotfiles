@@ -1,0 +1,3 @@
+* Dotfiles for CachyOS with KDE
+
+=NOTE=: I have used a lot of window managers, and went quite into the rabbit hole of NixOS and Home-Manager. CachyOS KDE and Chezmoi is what I have found to be the best for my workflow.
